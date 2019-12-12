@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Camera
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+<ion-grid>
+  <ion-row>
+    <ion-col size="12" size-sm>
+        <h1>{{device.manufacturer}}</h1>
+        <h1 *ngIf="infoDevice">{{infoDevice}}</h1>
+    </ion-col>
+    <ion-col size="12" size-sm>
+        <img *ngIf="base64Image" [src]= "base64Image" alt="">
+  <ion-button ion-button (click)="openCamera()" size="large" color="dark"> Open Camera</ion-button>
+      </ion-col>
+      
+     <!-- <ion-col size="12" size-sm>
+          <ion-button ion-button (click)="openCameraQR()" size="large" color="dark"> Open Camera QR</ion-button>
+          <p *ngIf="dataQR">
+              {{dataQR}}
+          </p> 
+        </ion-col>  -->
+       <ion-col size="12" size-sm>
+            <ion-button ion-button (click)="openBarCode()" size="large" color="dark"> Open Camera for BarCode</ion-button>
+
+            <p *ngIf="dataBarCode">
+              {{dataBarCode}}
+            </p>
+          </ion-col>
+  </ion-row>
+</ion-grid>
+
+
+
+
+
+
+
+
+ 
+</ion-content>
